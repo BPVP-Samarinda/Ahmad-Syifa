@@ -26,7 +26,7 @@ class DataPembeliResource extends Resource
                 Forms\Components\TextInput::make('nama'),
                 Forms\Components\TextInput::make('umur'),
                 Forms\Components\TextInput::make('alamat'),
-                Forms\Components\TextInput::make('agama'),               
+                Forms\Components\TextInput::make('agama'),            
                 
             ]);
     }
