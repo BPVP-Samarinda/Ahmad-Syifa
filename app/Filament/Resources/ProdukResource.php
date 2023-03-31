@@ -6,6 +6,7 @@ use App\Filament\Resources\ProdukResource\Pages;
 use App\Filament\Resources\ProdukResource\RelationManagers;
 use App\Models\Produk;
 use Filament\Forms;
+use Filament\Forms\FormsComponent;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -25,6 +26,7 @@ class ProdukResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('nama'),
                 Forms\Components\TextArea::make('deskripsi'),
+                Forms\Components\FileUpload::make('gambar'),
                 Forms\Components\Select::make('kategori_id')
                 ->relationship('kategori', 'nama'),
                 Forms\Components\TextInput::make('harga'),
@@ -38,6 +40,7 @@ class ProdukResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nama'),
+                Tables\Columns\TextColumn::make('gambar'),
                 Tables\Columns\TextColumn::make('kategori.nama'),
                 Tables\Columns\TextColumn::make('harga'),
                 Tables\Columns\TextColumn::make('stok'),
