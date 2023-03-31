@@ -25,7 +25,7 @@ class ProdukResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('nama'),
-                Forms\Components\TextArea::make('deskripsi'),
+                Forms\Components\Textarea::make('deskripsi'),
                 Forms\Components\FileUpload::make('gambar'),
                 Forms\Components\Select::make('kategori_id')
                 ->relationship('kategori', 'nama'),
