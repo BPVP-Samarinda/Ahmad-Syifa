@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('datapembeli', function($table){
             $table->id();
             $table->string('nama')->nullable();
+            $table->string('gender')->nullable();
             $table->integer('umur')->default(0);
             $table->string('alamat')->nullable();
             $table->string('agama')->nullable();

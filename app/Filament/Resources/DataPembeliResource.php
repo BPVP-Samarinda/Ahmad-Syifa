@@ -25,6 +25,7 @@ class DataPembeliResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('nama')->ColumnSpan('full'),
                 Forms\Components\TextInput::make('umur')->numeric()->ColumnSpan('full'),
+                Forms\Components\TextInput::make('gender')->ColumnSpan('full'),
                 Forms\Components\TextInput::make('alamat')->ColumnSpan('full'),
                 Forms\Components\TextInput::make('agama')->ColumnSpan('full'),            
                 
@@ -37,6 +38,7 @@ class DataPembeliResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('nama'),
                 Tables\Columns\TextColumn::make('umur'),
+                Tables\Columns\TextColumn::make('gender'),
                 Tables\Columns\TextColumn::make('alamat'),
                 Tables\Columns\TextColumn::make('agama')
             ])

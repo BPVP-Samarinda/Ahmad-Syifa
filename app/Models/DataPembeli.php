@@ -14,6 +14,7 @@ class DataPembeli extends Model
     protected $fillable = [
         'nama',
         'umur',
+        'gender',
         'alamat',
         'agama',
     ];
