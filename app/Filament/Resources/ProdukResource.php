@@ -24,13 +24,13 @@ class ProdukResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('nama'),
-                Forms\Components\Textarea::make('deskripsi'),
-                Forms\Components\FileUpload::make('gambar'),
+                Forms\Components\TextInput::make('nama')->ColumnSpan('full'),
+                Forms\Components\Textarea::make('deskripsi')->ColumnSpan('full'),
+                Forms\Components\FileUpload::make('gambar')->image()->ColumnSpan('full'),
                 Forms\Components\Select::make('kategori_id')
-                ->relationship('kategori', 'nama'),
-                Forms\Components\TextInput::make('harga'),
-                Forms\Components\TextInput::make('stok'),
+                ->relationship('kategori', 'nama')->ColumnSpan('full'),
+                Forms\Components\TextInput::make('harga')->numeric()->ColumnSpan('full'),
+                Forms\Components\TextInput::make('stok')->numeric()->ColumnSpan('full'),
 
             ]);
     }

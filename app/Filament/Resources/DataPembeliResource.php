@@ -23,10 +23,10 @@ class DataPembeliResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('nama'),
-                Forms\Components\TextInput::make('umur'),
-                Forms\Components\TextInput::make('alamat'),
-                Forms\Components\TextInput::make('agama'),            
+                Forms\Components\TextInput::make('nama')->ColumnSpan('full'),
+                Forms\Components\TextInput::make('umur')->numeric()->ColumnSpan('full'),
+                Forms\Components\TextInput::make('alamat')->ColumnSpan('full'),
+                Forms\Components\TextInput::make('agama')->ColumnSpan('full'),            
                 
             ]);
     }
