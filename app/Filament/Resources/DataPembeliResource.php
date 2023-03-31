@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProdukResource\Pages;
-use App\Filament\Resources\ProdukResource\RelationManagers;
-use App\Models\Produk;
+use App\Filament\Resources\DataPembeliResource\Pages;
+use App\Filament\Resources\DataPembeliResource\RelationManagers;
+use App\Models\DataPembeli;
 use Filament\Forms;
-use Filament\Forms\FormsComponent;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -14,9 +13,9 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ProdukResource extends Resource
+class DataPembeliResource extends Resource
 {
-    protected static ?string $model = Produk::class;
+    protected static ?string $model = DataPembeli::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -25,13 +24,10 @@ class ProdukResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('nama'),
-                Forms\Components\TextArea::make('deskripsi'),
-                Forms\Components\FileUpload::make('gambar'),
-                Forms\Components\Select::make('kategori_id')
-                ->relationship('kategori', 'nama'),
-                Forms\Components\TextInput::make('harga'),
-                Forms\Components\TextInput::make('stok'),
-
+                Forms\Components\TextInput::make('umur'),
+                Forms\Components\TextInput::make('alamat'),
+                Forms\Components\TextInput::make('agama'),               
+                
             ]);
     }
 
@@ -40,11 +36,9 @@ class ProdukResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nama'),
-                Tables\Columns\ImageColumn::make('gambar'),
-                Tables\Columns\TextColumn::make('kategori.nama'),
-                Tables\Columns\TextColumn::make('harga'),
-                Tables\Columns\TextColumn::make('stok'),
-
+                Tables\Columns\TextColumn::make('umur'),
+                Tables\Columns\TextColumn::make('alamat'),
+                Tables\Columns\TextColumn::make('agama')
             ])
             ->filters([
                 //
@@ -61,7 +55,7 @@ class ProdukResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageProduks::route('/'),
+            'index' => Pages\ManageDataPembelis::route('/'),
         ];
     }    
 }
