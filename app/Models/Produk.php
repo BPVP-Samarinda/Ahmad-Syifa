@@ -19,7 +19,7 @@ class Produk extends Model
         'stok'
     ];
 
-    public function Kategori(){
-        return $this->belongsTo(kategori::class);
+    public function kategori(){
+        return $this->belongsTo(Kategori::class);
     }
 }
